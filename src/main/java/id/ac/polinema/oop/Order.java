@@ -1,0 +1,44 @@
+package id.ac.polinema.oop;
+
+import id.ac.polinema.oop.Customer;
+import id.ac.polinema.oop.OrderItem;
+
+public class Order {
+    private Customer customer;
+    private OrderItem[] items;
+    private int itemCount;
+    
+    public Order(Customer customer) {
+        this.customer = customer;
+        items = new OrderItem[10];
+        itemCount = 0;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void addItem(MenuItem menuItem, int quantity) {
+        if (itemCount >= items.length) {
+            return;
+        }
+        items[itemCount] = new OrderItem(menuItem,quantity);
+        itemCount++;
+    }
+
+    public double getTotal() {
+        double total = 0;
+        for (int i = 0; i < itemCount; i++) {
+            total += items[i].getSubtotal();
+        }
+        return total;
+    }
+
+    public double getFinalTotal() {
+        double total = getTotal();
+        if (total >= 100000 ) {
+            return total * 0.9;
+        }
+        return total;
+    }
+}
