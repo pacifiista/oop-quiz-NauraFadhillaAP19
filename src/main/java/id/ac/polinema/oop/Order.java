@@ -15,7 +15,7 @@ public class Order {
     public OrderItem[] getItems() {
         return items;
     }
-    
+
     public Order(Customer customer) {
         this.customer = customer;
         items = new OrderItem[10];
@@ -50,3 +50,4 @@ public class Order {
         return total;
     }
 }
+

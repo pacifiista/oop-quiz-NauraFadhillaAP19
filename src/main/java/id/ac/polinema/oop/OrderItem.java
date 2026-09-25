@@ -22,3 +22,4 @@ public class OrderItem {
         return menuItem.getPrice() * quantity;
     }
 }
+
