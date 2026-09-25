@@ -8,6 +8,14 @@ public class Order {
     private OrderItem[] items;
     private int itemCount;
     
+        public int getItemCount() {
+        return itemCount;
+    }
+
+    public OrderItem[] getItems() {
+        return items;
+    }
+    
     public Order(Customer customer) {
         this.customer = customer;
         items = new OrderItem[10];
